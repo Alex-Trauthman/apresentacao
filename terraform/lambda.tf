@@ -47,7 +47,7 @@ resource "aws_iam_policy" "dynamodb_access" {
           "dynamodb:GetItem",
           "dynamodb:PutItem",
           "dynamodb:UpdateItem",
-          "dynamodb:DeleteItem",
+          "dynamodb:DeleteItem"
         ],
         Resource = aws_dynamodb_table.this.arn
       }
