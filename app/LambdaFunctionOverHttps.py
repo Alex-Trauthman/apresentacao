@@ -21,17 +21,13 @@ def update(payload):
 
 def delete(payload):
     return dynamo.delete_item(Key=payload['Key'])
-def scan(payload):
-    # Realiza um scan na tabela, retornando todos os itens
-    response = dynamo.scan()
-    return response['Items']
+
 
 operations = {
     'create': create,
     'read': read,
     'update': update,
-    'delete': delete,
-    'scan': scan
+    'delete': delete
 }
 
 def lambda_handler(event, context):
